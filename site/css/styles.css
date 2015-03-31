@@ -17,3 +17,26 @@ h4 {
 #header .title {
   padding-right: 3em;
 }
+.chapter {
+  font-family: source sans pro;
+  font-weight: 400;
+  columns: 2;
+  margin: 0 auto;
+}
+.chapter p {
+  color: #233742;
+}
+.chapter .block {
+  display: inline-block;
+}
+@media (min-width: 768px) {
+  .chapter {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    max-width: 74em;
+    -webkit-column-width: 36em;
+    -moz-column-width: 36em;
+    column-width: 36em;
+  }
+}
