@@ -1,5 +1,6 @@
 body {
   color: #233742;
+  padding: 18px;
 }
 h1,
 h2,
@@ -9,6 +10,15 @@ h4 {
   font-weight: 300;
   margin: 0;
   padding: 0;
+  margin-bottom: 9px;
+}
+a {
+  color: #73a0ad;
+  text-decoration: underline;
+}
+b {
+  font-weight: 700;
+  color: #232323;
 }
 #header {
   color: #232323;
@@ -22,9 +32,14 @@ h4 {
   font-weight: 400;
   columns: 2;
   margin: 0 auto;
+  font-size: 18px;
 }
 .chapter p {
-  color: #233742;
+  color: #355363;
+  margin-top: 0;
+  font-size: 18px;
+  line-height: 27px;
+  margin-bottom: 9px;
 }
 .chapter .block {
   display: inline-block;
@@ -35,8 +50,31 @@ h4 {
     -moz-column-count: 2;
     column-count: 2;
     max-width: 74em;
-    -webkit-column-width: 36em;
-    -moz-column-width: 36em;
-    column-width: 36em;
   }
+  h1 {
+    width: 100%;
+  }
+  .chapter {
+    -webkit-column-gap: 44px;
+    -moz-column-gap: 44px;
+    column-gap: 44px;
+  }
+  .chapter p,
+  .chapter li {
+    font-size: 22px;
+    line-height: 33px;
+  }
+  .chapter p,
+  .chapter ol:last-child {
+    margin-bottom: 11px;
+  }
+}
+#myrrys-menu {
+  position: absolute;
+  left: 18px;
+  top: 18px;
+}
+#myrrys-menu #myrrys-logo {
+  height: 72px;
+  width: 72px;
 }

@@ -7,14 +7,26 @@
 @base-color-hilight: RGB(66,66,66);
 @base-color-contrast: RGB(50,77,85);
 
+@base-grid: 18px;
+
 body{
   color: @base-color;
+  padding: @base-grid;
 }
 h1, h2, h3, h4{
   font-family: 'Oswald', sans-serif;
   font-weight: 300;
   margin: 0;
   padding: 0;
+  margin-bottom:0.5*@base-grid;
+}
+a{
+  color: lighten(@base-color-contrast, 30%);
+  text-decoration: underline;
+}
+b{
+    font-weight:700;
+    color: @base-color-dark;
 }
 
 #header{
@@ -29,13 +41,19 @@ h1, h2, h3, h4{
   font-weight:400;
   columns:2;
   margin:0 auto;
+  font-size:@base-grid;
   p{
-    color: @base-color;
+    color: lighten(@base-color,10%);
+    margin-top:0;
+    font-size:@base-grid;
+    line-height: @base-grid*1.5;
+    margin-bottom:0.5*@base-grid;
   }
   .block{
     display:inline-block;
   }
 }
+
 @media (min-width: 768px){
   .chapter{
     -webkit-column-count: 2;
@@ -44,8 +62,36 @@ h1, h2, h3, h4{
 
     max-width: 74em;
 
-    -webkit-column-width: 36em;
-    -moz-column-width: 36em;
-    column-width: 36em;
+  }
+  h1{
+    width:100%;
+  }
+  .chapter(22px);
+}
+
+.chapter(@mixed-grid){
+  .chapter{
+  p, li{
+    font-size:@mixed-grid;
+    line-height: @mixed-grid*1.5;
+  }
+  p, ol:last-child{
+    margin-bottom:0.5*@mixed-grid;
+  }
+  @gap: @mixed-grid*2;
+  -webkit-column-gap: @gap;
+     -moz-column-gap: @gap;;
+          column-gap: @gap;
+}
+}
+//Myrrys starts here - do refactor to other files
+#myrrys-menu{
+  position:absolute;
+  left: @base-grid;
+  top: @base-grid;
+
+  #myrrys-logo{
+    height: @base-grid*4;
+    width: @base-grid*4;
   }
 }
