@@ -12,6 +12,14 @@ h4 {
   padding: 0;
   margin-bottom: 9px;
 }
+.chapter_title h1 {
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+}
+.chapter_title p {
+  text-align: center;
+}
 a {
   color: #73a0ad;
   text-decoration: underline;
@@ -20,6 +28,21 @@ b {
   font-weight: 700;
   color: #232323;
 }
+div.illustration {
+  width: 100%;
+  background-color: #3d3d3d;
+}
+div.illustration p {
+  color: #b3cbd3;
+}
+.illustration img {
+  display: block;
+  width: 100%;
+}
+span.VEIL {
+  color: #5a28aa;
+  font-weight: 700;
+}
 #header {
   color: #232323;
   text-align: center;
@@ -27,10 +50,10 @@ b {
 #header .title {
   padding-right: 3em;
 }
-.chapter {
+.chapter,
+.chapter_title {
   font-family: source sans pro;
   font-weight: 400;
-  columns: 2;
   margin: 0 auto;
   font-size: 18px;
 }
@@ -45,11 +68,15 @@ b {
   display: inline-block;
 }
 @media (min-width: 768px) {
+  .chapter,
+  .chapter_title {
+    max-width: 74em;
+  }
   .chapter {
+    columns: 2;
     -webkit-column-count: 2;
     -moz-column-count: 2;
     column-count: 2;
-    max-width: 74em;
   }
   h1 {
     width: 100%;
@@ -67,6 +94,23 @@ b {
   .chapter p,
   .chapter ol:last-child {
     margin-bottom: 11px;
+  }
+  .chapter h1 {
+    font-size: 38.5px;
+  }
+  .chapter .illustration p {
+    padding: 11px;
+  }
+  .chapter .illustration p.cc_by {
+    padding-left: 38.5px;
+    background-image: url("../images/by.svg");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 33px;
+    margin-left: 11px;
+  }
+  .chapter_title h1 {
+    font-size: 61.6px;
   }
 }
 #myrrys-menu {

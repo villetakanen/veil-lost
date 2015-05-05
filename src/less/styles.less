@@ -4,7 +4,7 @@
 
 @base-color: #233742;
 @base-color-dark: #232323;
-@base-color-hilight: RGB(66,66,66);
+@base-color-hilight: RGB(90,40,170);
 @base-color-contrast: RGB(50,77,85);
 
 @base-grid: 18px;
@@ -20,6 +20,18 @@ h1, h2, h3, h4{
   padding: 0;
   margin-bottom:0.5*@base-grid;
 }
+.chapter_title{
+
+  h1{
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align:center;
+}
+p{
+  text-align:center;
+}
+}
+
 a{
   color: lighten(@base-color-contrast, 30%);
   text-decoration: underline;
@@ -29,6 +41,22 @@ b{
     color: @base-color-dark;
 }
 
+div.illustration{
+  width:100%;
+  background-color:lighten(@base-color-dark,10%);
+}
+div.illustration p{
+  color: lighten(@base-color-contrast, 50%);
+}
+.illustration img{
+  display:block;
+  width: 100%;
+}
+span.VEIL{
+    color:@base-color-hilight;
+    font-weight:700;
+}
+
 #header{
   color:@base-color-dark;
   text-align:center;
@@ -36,12 +64,18 @@ b{
     padding-right:3em;
   }
 }
-.chapter{
+.chapter,
+.chapter_title{
   font-family:source sans pro;
   font-weight:400;
-  columns:2;
   margin:0 auto;
   font-size:@base-grid;
+}
+
+.chapter{
+
+
+
   p{
     color: lighten(@base-color,10%);
     margin-top:0;
@@ -55,35 +89,57 @@ b{
 }
 
 @media (min-width: 768px){
+  .chapter,
+  .chapter_title{
+    max-width: 74em;
+  }
   .chapter{
+    columns:2;
     -webkit-column-count: 2;
     -moz-column-count: 2;
     column-count: 2;
-
-    max-width: 74em;
-
   }
   h1{
     width:100%;
   }
-  .chapter(22px);
+  .book(22px);
 }
 
-.chapter(@mixed-grid){
+.book(@mixed-grid){
   .chapter{
-  p, li{
-    font-size:@mixed-grid;
-    line-height: @mixed-grid*1.5;
+    p, li{
+      font-size:@mixed-grid;
+      line-height: @mixed-grid*1.5;
+    }
+    p, ol:last-child{
+      margin-bottom:0.5*@mixed-grid;
+    }
+    h1{
+      font-size: 1.75*@mixed-grid;
+    }
+    .illustration p{
+      padding: 0.5*@mixed-grid;
+    }
+    .illustration p.cc_by{
+      padding-left:1.75*@mixed-grid;
+      background-image: url("../images/by.svg");
+      background-repeat: no-repeat;
+      background-position: left center;
+      background-size: 1.5*@mixed-grid;
+      margin-left:0.5*@mixed-grid;
+    }
+    @gap: @mixed-grid*2;
+    -webkit-column-gap: @gap;
+       -moz-column-gap: @gap;;
+            column-gap: @gap;
   }
-  p, ol:last-child{
-    margin-bottom:0.5*@mixed-grid;
+  .chapter_title{
+    h1{
+      font-size: 2.8*@mixed-grid;
+      }
   }
-  @gap: @mixed-grid*2;
-  -webkit-column-gap: @gap;
-     -moz-column-gap: @gap;;
-          column-gap: @gap;
 }
-}
+
 //Myrrys starts here - do refactor to other files
 #myrrys-menu{
   position:absolute;
